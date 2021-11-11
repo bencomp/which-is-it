@@ -5,12 +5,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX edm: <http://www.europeana.eu/schemas/edm/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX schema: <http://schema.org/>
 
-SELECT (count(?sub) as ?count) ?rights ?simpleRights
+SELECT (count(?sub) as ?count) ?rights ?license ?simpleRights
 WHERE {
   {
   	?sub edm:isShownBy ?image.
-    OPTIONAL {    ?sub   dc:rights ?simpleRights.}
+    OPTIONAL { ?sub dc:rights ?simpleRights. }
+    OPTIONAL { ?sub schema:license ?license. }
   	{
       ?sub edm:rights ?rights.
   	} UNION {
@@ -18,4 +20,4 @@ WHERE {
     }
   }
 } 
-GROUP BY ?rights ?simpleRights
+GROUP BY ?rights ?license ?simpleRights
