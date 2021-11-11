@@ -1,3 +1,4 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 # How many items have which license attached?
 # Works with https://api.data.netwerkdigitaalerfgoed.nl/datasets/hetutrechtsarchief/Beeldbank/services/Beeldbank/sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -10,7 +11,9 @@ PREFIX schema: <http://schema.org/>
 SELECT (count(?sub) as ?count) ?rights ?license ?simpleRights
 WHERE {
   {
-  	?sub edm:isShownBy ?image.
+    {?sub foaf:depiction ?image.}
+    UNION
+    {?sub edm:isShownBy ?image.}
     OPTIONAL { ?sub dc:rights ?simpleRights. }
     OPTIONAL { ?sub schema:license ?license. }
   	{
