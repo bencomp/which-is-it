@@ -1,0 +1,15 @@
+# Replace IRIs-as-strings by real IRIs
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ?sub edm:isShownBy ?obj .
+}
+INSERT {
+  ?sub edm:isShownBy ?iri .
+}
+WHERE {
+  ?sub edm:isShownBy ?obj .
+  BIND (IRI(?obj) AS ?iri)
+}

@@ -1,0 +1,25 @@
+# Convert a textual license indication to an IRI
+# Created to work with the NMVW collection
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?sub edm:rights ?liciri .
+}
+WHERE {
+  ?sub edm:rights ?licstr .
+  VALUES (?licstr ?liciri) {
+    ("CC-BY-SA 4.0" <https://creativecommons.org/licenses/by-sa/4.0/>)
+    ("CC-BY-NC-ND 4.0" <https://creativecommons.org/licenses/by-nc-nd/4.0/>)
+    ("(not assigned)" <http://rightsstatements.org/vocab/CNE/1.0/>)
+    ("Copyright" <http://rightsstatements.org/vocab/InC/1.0/>)
+    ("Copyrightstatus onbekend" <http://rightsstatements.org/vocab/UND/1.0/>)
+    ("Copyright, wel tonen" <http://rightsstatements.org/vocab/InC/1.0/>)
+    ("Copyright, ontsluiten met toestemming" <http://rightsstatements.org/vocab/InC/1.0/>)
+    # ("PD-anon-70-EU" <http://rightsstatements.org/vocab/CNE/1.0/>)
+    ("Public domain" <https://creativecommons.org/publicdomain/mark/1.0/>)
+  }
+} 
+ORDER BY asc(?sub)
+ LIMIT 1000
