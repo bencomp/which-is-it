@@ -1,0 +1,16 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+SELECT * WHERE {
+  
+  ?sub edm:isShownBy ?obj ; ?p2 ?obj2.
+  OPTIONAL { ?sub dc:title ?subTitle . }
+  OPTIONAL { ?sub dc:right ?subRights . }
+  OPTIONAL { ?sub dct:rightsStatement ?subRightsStatement . }
+  OPTIONAL {
+    ?item ?p ?sub .
+  }
+  OPTIONAL {?obj dc:rights ?imageRights .}
+} LIMIT 100
