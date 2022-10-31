@@ -1,25 +1,20 @@
 <script>
+  import * as Model from "./model.js";
   let mySecretImage;
   import Card from "./lib/Card.svelte";
   let gameState = "home";
   let actions = [];
-  let items = [
-    {id: 1, image: "/vite.svg"},
-    {id: 2, image: "/vite.svg"},
-    {id: 3, image: "/vite.svg"},
-    {id: 4, image: "/vite.svg"},
-    {id: 5, image: "/vite.svg"},
-    {id: 6, image: "/vite.svg"},
-    {id: 7, image: "/vite.svg"},
-    {id: 8, image: "/vite.svg"},
-    {id: 9, image: "/vite.svg"},
-    {id: 10, image: "/vite.svg"},
-  ];
+  
+  var items = null;
+
   function startGame() {
-    gameState = "playing";
+    Model.getItems(function(_items){
+      console.log(items);
+      items = _items;    
+      gameState = "playing";
+    })
   }
   function handleToggle(event) {
-    
     actions.push(event.detail);
     actions = actions;
   }
