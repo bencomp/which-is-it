@@ -9,6 +9,7 @@ jobs:
   web-deploy:
     name: 🎉 Build and deploy
     runs-on: ubuntu-latest
+    environment: staging
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
