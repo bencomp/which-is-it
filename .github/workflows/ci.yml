@@ -3,10 +3,11 @@ name: CI/CD
 on:
   push:
     branches: [main]
+  pull_request:
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Build and deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -19,6 +20,7 @@ jobs:
       
     - name: 🔨 Build Project
       run: |
+        cd app
         npm install
         npm run build
 
