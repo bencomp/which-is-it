@@ -3,29 +3,36 @@ name: CI/CD
 on:
   push:
     branches: [main]
+  pull_request:
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Build and deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 14
-      uses: actions/setup-node@v2
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: app/package-lock.json
       
     - name: 🔨 Build Project
       run: |
+        cd app
         npm install
         npm run build
 
-    # - name: 📂 Sync files
-    #   uses: SamKirkland/FTP-Deploy-Action@4
-    #   with:
-    #     server: ${{ secrets.FTP_SERVER }}
-    #     username: ${{ secrets.FTP_USER }}
-    #     password: ${{ secrets.FTP_PASSWORD }}
-    #     protocol: ftps
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      if: ${{ github.event_name == 'push' }}
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./app/dist/
+        security: strict
