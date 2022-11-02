@@ -26,10 +26,11 @@ jobs:
         npm install
         npm run build
 
-    # - name: 📂 Sync files
-    #   uses: SamKirkland/FTP-Deploy-Action@4
-    #   with:
-    #     server: ${{ secrets.FTP_SERVER }}
-    #     username: ${{ secrets.FTP_USER }}
-    #     password: ${{ secrets.FTP_PASSWORD }}
-    #     protocol: ftps
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4
+      if: ${{ github.event_name == 'push' }}
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
