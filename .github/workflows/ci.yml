@@ -27,7 +27,7 @@ jobs:
         npm run build
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.x
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
       if: ${{ github.event_name == 'push' }}
       with:
         server: ${{ secrets.FTP_SERVER }}
