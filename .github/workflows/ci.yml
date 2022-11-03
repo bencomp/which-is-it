@@ -6,10 +6,9 @@ on:
   pull_request:
 
 jobs:
-  web-deploy:
-    name: 🎉 Build and deploy
+  build:
+    name: 🎉 Build
     runs-on: ubuntu-latest
-    environment: staging
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
@@ -27,13 +26,30 @@ jobs:
         npm install
         npm run build
 
+    - name: Store artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: gui
+        path: app/dist
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    environment: staging
+    needs: build
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: gui
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      if: ${{ github.event_name == 'push' }}
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./app/dist/
+        local-dir: ./
         security: strict
