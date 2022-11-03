@@ -28,9 +28,9 @@ jobs:
 
     - name: Store artifacts
       uses: actions/upload-artifact@v3
-        with:
-          name: gui
-          path: app/dist
+      with:
+        name: gui
+        path: app/dist
 
   deploy:
     name: Deploy
@@ -40,9 +40,9 @@ jobs:
     needs: build
     steps:
     - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: gui
+      uses: actions/download-artifact@v3
+      with:
+        name: gui
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
