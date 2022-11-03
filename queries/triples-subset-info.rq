@@ -1,3 +1,9 @@
+# Profile a dataset by counting combinations of:
+# - predicate
+# - object class (if resource)
+# - object datatype (if literal)
+# - object language (if langString)
+# There is a limit on the size of the dataset that you can profile this way.
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
