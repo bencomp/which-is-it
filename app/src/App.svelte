@@ -1,8 +1,8 @@
 <script>
   import * as Model from "./model.js";
-  let mySecretImage;
   import Card from "./lib/Card.svelte";
   let gameState = "home";
+  let mySecretImage;
   let actions = [];
   
   var items = null;
@@ -14,10 +14,32 @@
       gameState = "playing";
     })
   }
+  
   function handleToggle(event) {
-    actions.push(event.detail);
-    actions = actions;
+    //  actions.push(event.detail);
+    // actions = actions;
+  
+    let annotation = {
+       "@context": "http://www.w3.org/ns/anno.jsonld",                                                                                                               
+      "id": "https://w3id.org/whichisit/annotation/#"+Math.floor(Math.random()*100000),                                                                                                                           
+       "type": "Annotation",                                                                                                                                     
+        "bodyValue": "hoipipelepoi",                                                                                                                         
+       "target": event.detail.number
+    }
+
+    console.log(event);
   }
+
+    function reset(event){
+      let figures = document.getElementsByTagName("figure");
+      for(let i=0;i++;i<figures.length-1){
+               figures[i].classList.add("active");
+      }
+
+      console.log(figures)
+    }
+
+
 </script>
 
 <main>
@@ -37,7 +59,8 @@
     {/each}
   </ol>
   {/if}
-
+   <label for="fname">vraag</label>
+<input on:click={reset} type="text" id="vraag" name="vraag"> 
 </main>
 
 <style>

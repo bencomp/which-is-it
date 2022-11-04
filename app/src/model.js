@@ -5,18 +5,6 @@ export class Model {
 
 export function querySparql(sp, callback){
 	console.log("query sparql");
-	var engine = Comunica.newEngine();
-	var self = this;
-	engine.query(sp ,   { sources: [
-			{ type: 'file', value: 'https://flow.recipes/ns/core' },
-			{ type: 'file', value: 'https://flow.recipes/ns/schemes' }
-		] }).then(function (result){
-			engine.resultToString(result, 'application/sparql-results+json', result.context).then((d) => {
-			var res = '';
-			d.data.on('data', (a) => { res += a });
-			d.data.on('end', () => {
-				console.log(res) ;
-				var prefix = "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . @prefix core:  <https://flow.recipes/ns/core#> .  @prefix skos: <http://www.w3.org/2008/05/skos#> . ";
         let items = [
           {id: 1, image: "/vite.svg"},
           {id: 2, image: "/vite.svg"},
@@ -29,12 +17,27 @@ export function querySparql(sp, callback){
           {id: 9, image: "/vite.svg"},
           {id: 10, image: "/vite.svg"},
         ]
+			  callback(items);
+	return
+}
+/*	var engine = Comunica.newEngine();
+  var self = this;
+	engine.query(sp ,   { sources: [
+			{ type: 'file', value: 'https://flow.recipes/ns/core' },
+			{ type: 'file', value: 'https://flow.recipes/ns/schemes' }
+		] }).then(function (result){
+			engine.resultToString(result, 'application/sparql-results+json', result.context).then((d) => {
+			var res = '';
+			d.data.on('data', (a) => { res += a });
+			d.data.on('end', () => {
+				console.log(res) ;
+				var prefix = "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . @prefix core:  <https://flow.recipes/ns/core#> .  @prefix skos: <http://www.w3.org/2008/05/skos#> . ";
         console.log(prefix + res);
 			  callback(items);
 			});
 		});
     });
-}
+}*/
 
 export function getItems(callback){
   function format(literals, ...substitutions) {

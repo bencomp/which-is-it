@@ -7,7 +7,9 @@
   export let image;
   export let active = true;
 
-  function handleClick() {
+  function handleClick(e) {
+    console.log(e)
+    //    e.srcElement.parentElement.classList.add("hide");
     active = !active;
     dispatch('toggle', {number: number, active: active})
   }
@@ -32,6 +34,16 @@
 
   .active {
     box-shadow: red 1em 1em 1em;
+  }
+
+  figure {
+    visibility:hidden;
+
+  }
+
+  figure.active {
+
+    visibility:visible
   }
 
 </style>
