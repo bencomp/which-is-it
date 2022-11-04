@@ -3,7 +3,7 @@ import itertools
 import json
 import websockets
 
-from connect4 import PLAYER1, PLAYER2, Connect4
+# from connect4 import PLAYER1, PLAYER2, Connect4
 
 async def handler(websocket):
     # Initialize a Connect Four game.
@@ -15,6 +15,7 @@ async def handler(websocket):
 
     async for message in websocket:
         # Parse a "play" event from the UI.
+        print(message)
         event = json.loads(message)
         # assert event["type"] == "play"
         # column = event["column"]
