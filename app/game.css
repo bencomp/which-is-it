@@ -29,7 +29,8 @@ form input.form-control  {
 }
 
 #yesAnswer,
-#noAnswer{
+#noAnswer,
+#decisionsReady{
   margin-left:40px;
   color:#ffffff;
   width:80px;
