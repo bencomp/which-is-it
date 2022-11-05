@@ -1,6 +1,14 @@
 const api = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/collectie/services/collectie/sparql'
 /** This user's role in the game */
 let player
+
+/**
+ * state of the game, one of
+ * - player1asks
+   - player1
+ */
+let turn = "player1"
+
 const postOptions = {
   method: 'POST',
   mode: 'cors',
@@ -28,7 +36,7 @@ window.onload = function() {
             vlagImg.src = obj.vlag.value
             img.src = obj.imgS.value
             html.push(`
-    <article class="col" id="test">
+    <article class="col">
       <div class="card shadow-sm">
         <img src="${obj.imgS.value}">
         <div class="card-body">
@@ -112,6 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
         question: annotationText,
         player: player,
     }
+    document.getElementById('my_question').textContent = annotationText
     websocket.send(JSON.stringify(event))
   })
   document.querySelector("#yesAnswer").addEventListener("click", () => {
@@ -130,8 +139,31 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     websocket.send(JSON.stringify(event))
   })
+  document.querySelector("#decisionsReady").addEventListener("click", () => {
+    // Disable images that have been "selected"
+    // Annotate these with negative of received answer
+    // Find images that are still in the game
+    // Annotate them with received answer
+    const imagesLeft = findActiveImages()
+    const urisLeft = Array.from(imagesLeft)//, img => {})
+    const event = {
+        type: "decisions",
+        left: urisLeft,
+        player: player,
+    }
+    websocket.send(JSON.stringify(event))
+    // Clear question and answer
+
+  })
 
 })
+
+/**
+ * Return images that haven't been deactivated yet
+ */
+function findActiveImages() {
+  return document.querySelectorAll('.card:not(.inactive)')
+}
 
 /**
  * Add listeners to the websocket and sets up the game
@@ -209,6 +241,13 @@ function initGame(websocket) {
 function showAnswer(inAnswer) {
     // FIXME
     answer = inAnswer
+    const questionElem = document.querySelector('.form-control.me-2')
+    if (answer === "yes") {
+        questionElem.classList.add('correct')
+    } else if (answer === "no") {
+        questionElem.classList.add('incorrect')
+    }
+    document.querySelector('#oppo_answer').textContent = inAnswer
 }
 
 /**
