@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(234, 78, 85) !important;
+}
+
+nav.navbar {
+  background-color: rgb(234, 78, 85) !important;
+}
+
+form button {
+  background-color:#fff !important;
+}
+
+form button:hover {
+  color:  rgb(234, 78, 85) !important;
+}
+
+.album {
+  margin-top: 30px;
+}
+
+article {
+  cursor: pointer;
+}
+
+article.selected {
+  opacity: 30%;
+}
