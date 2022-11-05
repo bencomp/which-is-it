@@ -125,7 +125,7 @@ form input.ja {
 .card-text img {
     max-width: 50px;
     position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
+    top: 0;
+    margin-top: 10px;
   }
 
