@@ -47,6 +47,20 @@ window.onload = function() {
           document.querySelectorAll('article').forEach(obj => {
             obj.onclick = (ev) => {
               obj.classList.toggle('selected')
+     
+              let annotation = {
+                "@context": "http://www.w3.org/ns/anno.jsonld",                                                                                                               
+                "id": "https://w3id.org/whichisit/annotation/#"+Math.floor(Math.random()*100000),                                                                                                                           
+                "type": "annotation",                                                                                                                                     
+                "bodyValue": annotationText + " " + answer,                                                                                                                         
+                "target": "todo"
+              }
+              // FIXME 
+              console.log(annotation);
+
+
+
+
             }
           })
 
@@ -71,10 +85,18 @@ window.onload = function() {
     // }, 1000)
     // 
 }
-
+var annotationText = "";
+var websocket;
+var answer = "";
 window.addEventListener("DOMContentLoaded", () => {
-  const websocket = new WebSocket("ws://172.16.32.159:8001/");
-  initGame(websocket)
+  websocket = new WebSocket("ws://172.16.32.159:8001/");
+  initGame(websocket);
+
+  document.querySelectorAll(".btn-outline-secondary")[0].addEventListener("click", () => {
+      annotationText = document.querySelectorAll(".form-control")[0].value;
+     websocket.send(annotationText);
+  })
+
 })
 
 function initGame(websocket) {
@@ -95,6 +117,18 @@ function initGame(websocket) {
     }
     // FIXME: show player1 or player2 in UI
     websocket.send(JSON.stringify(event));
+  });
+
+  websocket.addEventListener("message", (e) => {
+    if (e.data == "ja") {
+      answer = "ja";
+    } else if (e.data = "nee")  {
+      answer = "nee";
+
+    }
+
+
+    console.log(e)
   });
 }
 
