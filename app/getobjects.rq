@@ -4,17 +4,36 @@ PREFIX edm: <http://www.europeana.eu/schemas/edm/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?term ?id ?img ?onderwerp ?medium ?lokatie ?spatial ?geonames
+PREFIX wdt: 	<http://www.wikidata.org/prop/direct/>
+PREFIX wd: 		<http://www.wikidata.org/entity/>
+PREFIX bd: 		<http://www.bigdata.com/rdf#>
+
+SELECT  ?geonames ?imgS ?vlag
 WHERE {
-  ?term a skos:Concept; skos:narrower+ ?nt ;
-  skos:prefLabel ?label .
-  ?nt skos:prefLabel ?ntLabel .
-  ?item edm:object ?nt; dc:subject/skos:prefLabel ?onderwerp; dct:medium/skos:prefLabel ?medium; dct:spatial ?spatial;
-	edm:isShownBy ?img; dc:identifier ?id .
-  ?spatial skos:prefLabel ?lokatie; skos:exactMatch ?geonames .
-  filter(?label = 'hoeden' || ?ntLabel = 'hoeden')
+  {
+  SELECT distinct ?geonames ?geoId ?imgS
+  WHERE {
+    ?term a skos:Concept; skos:narrower+ ?nt ;
+    skos:prefLabel ?label .
+    ?nt skos:prefLabel ?ntLabel .
+    ?item edm:object ?nt; dc:subject/skos:prefLabel ?onderwerp; dct:medium/skos:prefLabel ?medium; dct:spatial ?spatial; edm:isShownBy ?img .
+    ?spatial skos:prefLabel ?lokatie; skos:exactMatch ?geonames .
+    BIND(REPLACE(STR(?geonames), "[^0-9]","", "i") AS ?geoId).
+    BIND(replace(?img, 'http://', 'https://') AS ?imgT).
+    BIND(CONCAT(STR(?imgT), '?height=100') AS ?imgS).
+    
+    FILTER(?label = 'hoeden' || ?ntLabel = 'hoeden').
+  } 
+   LIMIT 50
+  }
+  
+  SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> { 
+  	?s wdt:P1566 ?geoId .
+    ?vlag  ^wdt:P17*/^wdt:P41 ?s .
+  }
+
+ 
 }
-GROUP BY ?item
+GROUP BY ?geonames ?vlag ?imgS
 ORDER BY RAND()
 LIMIT 24
-

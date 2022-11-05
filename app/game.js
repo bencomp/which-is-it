@@ -18,21 +18,20 @@ window.onload = function() {
       fetch(api, postOptions)
         .then(response => response.json())
         .then(ld => {
+          console.log(ld)
           const html = []
           ld.results.bindings.forEach(obj => {
+            console.log("test")
             const img = new Image()
-            img.onload = () => {
-              if (this.width > this.height) {
-
-              }
-            }
-            img.src = obj.img.value
+            const vlagImg = new Image();
+            vlagImg.src = obj.vlag.value
+            img.src = obj.imgS.value
             html.push(`
-    <article class="col" id="${obj.id.value}">
+    <article class="col" id="test">
       <div class="card shadow-sm">
-        <img src="${obj.img.value}">
+        <img src="${obj.imgS.value}">
         <div class="card-body">
-          <p class="card-text">${obj.onderwerp.value}, <a href="${obj.geonames.value}">${obj.lokatie.value}</a></p>
+          <p class="card-text"><img src=${obj.vlag.value}></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button type="button" class="guess btn btn-sm btn-outline-secondary">Deze is het!</button>
