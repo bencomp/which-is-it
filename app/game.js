@@ -23,7 +23,7 @@ window.onload = function() {
             const img = new Image()
             img.onload = () => {
               if (this.width > this.height) {
-                
+
               }
             }
             img.src = obj.img.value
@@ -44,18 +44,22 @@ window.onload = function() {
 `)
           })
           document.getElementById('objects').innerHTML = html.join('')
+          const theImg = document.createElement('img', {id: 'the_image'})
+          const theNumber = Math.floor(Math.random() * html.length)
+          theImg.src = ld.results.bindings[theNumber].img.value
+          document.getElementById('this_one').appendChild(theImg)
           document.querySelectorAll('article').forEach(obj => {
             obj.onclick = (ev) => {
               obj.classList.toggle('selected')
-     
+
               let annotation = {
-                "@context": "http://www.w3.org/ns/anno.jsonld",                                                                                                               
-                "id": "https://w3id.org/whichisit/annotation/#"+Math.floor(Math.random()*100000),                                                                                                                           
-                "type": "annotation",                                                                                                                                     
-                "bodyValue": annotationText + " " + answer,                                                                                                                         
+                "@context": "http://www.w3.org/ns/anno.jsonld",
+                "id": "https://w3id.org/whichisit/annotation/#"+Math.floor(Math.random()*100000),
+                "type": "annotation",
+                "bodyValue": annotationText + " " + answer,
                 "target": "todo"
               }
-              // FIXME 
+              // FIXME
               console.log(annotation);
 
 
@@ -71,7 +75,10 @@ window.onload = function() {
             }
           })
         })
-        .catch(e => alert('Er heeft zich een fout voorgedaan'))
+        .catch(e => {
+            console.error(e)
+            alert('Er heeft zich een fout voorgedaan')
+            })
     })
 
   const eventOut = {
@@ -83,7 +90,7 @@ window.onload = function() {
     //   console.lwebsocket.send(JSON.stringify(eventOut))
     //   alert(1)
     // }, 1000)
-    // 
+    //
 }
 var annotationText = "";
 var websocket;

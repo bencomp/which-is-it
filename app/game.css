@@ -32,3 +32,11 @@ article {
 article.selected {
   opacity: 30%;
 }
+
+.orakel {
+  gap: 1rem;
+}
+
+.orakel img {
+  max-height: 20rem;
+}
