@@ -105,6 +105,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 })
 
+/**
+ * Add listeners to the websocket and sets up the game
+ * @param {WebSocket} websocket
+ */
 function initGame(websocket) {
   websocket.addEventListener("open", () => {
     // Send an "init" event according to who is connecting.
@@ -117,6 +121,7 @@ function initGame(websocket) {
     } else if (params.has("watch")) {
       // Spectator watches an existing game.
       event.watch = "watch";
+      player = "watcher"
     } else {
       // First player starts a new game.
       player = "player1";
@@ -125,16 +130,38 @@ function initGame(websocket) {
     websocket.send(JSON.stringify(event));
   });
 
-  websocket.addEventListener("message", (e) => {
-    if (e.data == "ja") {
-      answer = "ja";
-    } else if (e.data = "nee")  {
-      answer = "nee";
-
+  websocket.addEventListener("message", ({ data }) => {
+    const event = JSON.parse(data);
+    console.log(event);
+    switch (event.type) {
+      case "init":
+        // Create links for inviting the second player and spectators.
+        document.querySelector(".join").href = "?join=" + event.join;
+        document.querySelector(".watch").href = "?watch=" + event.watch;
+        break;
+      case "question":
+        // Update the UI with the move.
+        showQuestion(event.question);
+        break;
+      case "answer":
+        // Show the other player's answer
+        showAnswer(event.answer);
+        break;
+      case "decisions":
+        // Show the other player's answer
+        showOpponentImages(event.left.length);
+        break;
+      case "win":
+        showMessage(`Player ${event.player} wins!`);
+        // No further messages are expected; close the WebSocket connection.
+        websocket.close(1000);
+        break;
+      case "error":
+        showMessage(event.message);
+        break;
+      default:
+        throw new Error(`Unsupported event type: ${event.type}.`);
     }
-
-
-    console.log(e)
   });
 }
 
@@ -153,7 +180,7 @@ function showAnswer(answer) {
  * @param {string} question The other player's question
  */
 function showQuestion(question) {
-    // FIXME
+  document.querySelector('#oppo_question').textContent = question
 }
 /**
  * Update UI with number of images the opponent has left
