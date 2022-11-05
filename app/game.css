@@ -31,4 +31,29 @@ article {
 
 article.selected {
   opacity: 30%;
+
+}
+
+div.card {
+  --bs-card-height: 18em !important;
+}
+
+
+.card-text {
+float: left;
+height:20px;
+}
+
+
+.card-text img {
+ max-width:50px;
+}
+
+.card button {
+     position: relative;
+    /* flex: 1 1 auto; */
+    float: right;
+    /* display: block; */
+    top: 0;
+    margin: 0 0 0px 50px;
 }
