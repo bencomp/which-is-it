@@ -40,13 +40,9 @@ window.onload = function() {
     <article class="col">
       <div class="card shadow-sm">
         <img src="${obj.imgS.value}">
+        <p style="padding:4px">${obj.onderwerp.value}</p>
         <div class="card-body">
           <p class="card-text"><img src=${obj.vlag.value}></p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="guess btn btn-sm btn-outline-secondary">Deze is het!</button>
-            </div>
-          </div>
         </div>
       </div>
     </article>

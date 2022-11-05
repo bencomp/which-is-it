@@ -8,10 +8,10 @@ PREFIX wdt: 	<http://www.wikidata.org/prop/direct/>
 PREFIX wd: 		<http://www.wikidata.org/entity/>
 PREFIX bd: 		<http://www.bigdata.com/rdf#>
 
-SELECT  ?geonames ?imgS ?vlag
+SELECT  ?geonames ?imgS ?vlag ?onderwerp
 WHERE {
   {
-  SELECT distinct ?geonames ?geoId ?imgS
+  SELECT distinct ?geonames ?geoId ?imgS ?onderwerp
   WHERE {
     ?term a skos:Concept; skos:narrower+ ?nt ;
     skos:prefLabel ?label .
@@ -34,6 +34,6 @@ WHERE {
 
 
 }
-GROUP BY ?geonames ?vlag ?imgS
+GROUP BY ?geonames ?vlag ?imgS ?onderwerp
 #ORDER BY RAND()
 LIMIT 24

@@ -121,3 +121,11 @@ form input.ja {
   background-color:#bbffc3;
   color:#0b280a;
 }
+
+.card-text img {
+    max-width: 50px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+
