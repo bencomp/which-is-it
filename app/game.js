@@ -1,4 +1,5 @@
 const server = "ws://192.168.43.181:8001"
+const webserver = "http://192.168.43.181:8000"
 const api = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/collectie/services/collectie/sparql'
 /** This user's role in the game */
 let player
@@ -21,11 +22,12 @@ const postOptions = {
   },
 }
 window.onload = function() {
-  fetch('getobjects.rq')
-    .then(response => response.text())
-    .then(rq => {
-      postOptions.body = `query=${rq}`
-      fetch(api, postOptions)
+//   fetch('getobjects.rq')
+//     .then(response => response.text())
+//     .then(rq => {
+//       postOptions.body = `query=${rq}`
+//       fetch(api, postOptions)
+      fetch(webserver + "/objects-cached.json")
         .then(response => response.json())
         .then(ld => {
           console.log(ld)
@@ -63,9 +65,6 @@ window.onload = function() {
               // FIXME
               console.log(annotation);
 
-
-
-
             }
           })
 
@@ -88,7 +87,7 @@ window.onload = function() {
             console.error(e)
             alert('Er heeft zich een fout voorgedaan')
             })
-    })
+    // })
 
   const eventOut = {
         type: "question",
