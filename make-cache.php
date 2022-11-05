@@ -9,7 +9,7 @@ foreach ($results->results->bindings as &$binding) {
   parse_str(parse_url($img)['query'], $q);
   $target = $source . basename($q['filename']);
   if (!file_exists($target)) copy($img, $target);
-  $binding->imgS->value = str_replace(__DIR__  .'/', '', $target);
+  $binding->imgS->value = str_replace(__DIR__  .'/app/', '', $target);
 }
 
 echo json_encode($results, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
