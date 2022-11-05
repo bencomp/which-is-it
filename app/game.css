@@ -35,7 +35,7 @@ form input.form-control  {
   width:80px;
   padding:9px;
 border: 0px solid #ced4da !important;
- background-color: rgb(234, 78, 85) !important;. 
+ background-color: rgb(234, 78, 85) !important;
 }
 
 #oppo_question {
@@ -64,7 +64,7 @@ article.selected {
 }
 
 .orakel {
-  margin-top:10px
+  margin-top:10px;
   gap: 1rem;
 }
 
