@@ -13,24 +13,11 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: app/package-lock.json
-      
-    - name: 🔨 Build Project
-      run: |
-        cd app
-        npm install
-        npm run build
-
     - name: Store artifacts
       uses: actions/upload-artifact@v3
       with:
         name: gui
-        path: app/dist
+        path: app
 
   deploy:
     name: Deploy
