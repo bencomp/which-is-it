@@ -21,18 +21,18 @@ WHERE {
     BIND(REPLACE(STR(?geonames), "[^0-9]","", "i") AS ?geoId).
     BIND(replace(?img, 'http://', 'https://') AS ?imgT).
     BIND(CONCAT(STR(?imgT), '?height=100') AS ?imgS).
-    
+
     FILTER(?label = 'hoeden' || ?ntLabel = 'hoeden').
-  } 
-   LIMIT 50
   }
-  
-  SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> { 
+   LIMIT 150
+  }
+
+  SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> {
   	?s wdt:P1566 ?geoId .
     ?vlag  ^wdt:P17*/^wdt:P41 ?s .
   }
 
- 
+
 }
 GROUP BY ?geonames ?vlag ?imgS
 #ORDER BY RAND()
