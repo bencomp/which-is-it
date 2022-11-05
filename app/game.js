@@ -27,7 +27,7 @@ window.onload = function() {
 //     .then(rq => {
 //       postOptions.body = `query=${rq}`
 //       fetch(api, postOptions)
-      fetch(webserver + "/objects.json")
+      fetch(webserver + "/objects-cached.json")
         .then(response => response.json())
         .then(ld => {
           console.log(ld)
