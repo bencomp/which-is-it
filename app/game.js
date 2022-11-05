@@ -145,16 +145,22 @@ function initGame(websocket) {
         // FIXME: get the board parameters from player1
         break;
       case "question":
-        // Update the UI with the move.
-        showQuestion(event.question);
+        // Update the UI with the question from the other player.
+        if (event.player !== player) {
+            showQuestion(event.question);
+        }
         break;
       case "answer":
         // Show the other player's answer
-        showAnswer(event.answer);
+        if (event.player !== player) {
+            showAnswer(event.answer);
+        }
         break;
       case "decisions":
         // Show the other player's answer
-        showOpponentImages(event.left.length);
+        if (event.player !== player) {
+            showOpponentImages(event.left.length);
+        }
         break;
       case "win":
         showMessage(`Player ${event.player} wins!`);
