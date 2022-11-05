@@ -42,9 +42,9 @@ window.onload = function() {
     <article class="col">
       <div class="card shadow-sm">
         <img src="${obj.imgS.value}">
-        <p style="padding:4px">${obj.onderwerp.value}</p>
+        <img class="flag" src="${obj.vlag.value}">
         <div class="card-body">
-          <p class="card-text"><img src=${obj.vlag.value}></p>
+          <p class="card-text">${obj.onderwerp.value}, <a href="${obj.geonames.value}">${obj.lokatie.value}</a></p>
         </div>
       </div>
     </article>

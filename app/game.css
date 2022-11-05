@@ -73,21 +73,20 @@ article.selected {
   max-height: 20rem;
 }
 
-div.card {
-  --bs-card-height: 18em !important;
-}
-
-
-.card-text {
-float: left;
-height:20px;
-}
 
 
 .card-text img {
  max-width:50px;
 }
 
+.card a {
+  text-decoration: none;
+  color: rgb(234, 78, 85);
+}
+.card a:hover {
+  color: rgb(151, 57, 61);
+
+}
 .card button {
      position: relative;
     /* flex: 1 1 auto; */
@@ -122,10 +121,10 @@ form input.ja {
   color:#0b280a;
 }
 
-.card-text img {
+img.flag {
     max-width: 50px;
     position: absolute;
-    top: 0;
-    margin-top: 10px;
+    top: 10px; left: 10px;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2)
   }
 
