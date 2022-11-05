@@ -35,6 +35,7 @@ function showMessage(message) {
 function receiveMoves(board, websocket) {
   websocket.addEventListener("message", ({ data }) => {
     const event = JSON.parse(data);
+    console.log(event);
     switch (event.type) {
       case "init":
         // Create links for inviting the second player and spectators.
@@ -48,6 +49,10 @@ function receiveMoves(board, websocket) {
       case "answer":
         // Show the other player's answer
         showAnswer(event.answer);
+        break;
+      case "decisions":
+        // Show the other player's answer
+        showOpponentImages(event.left.length);
         break;
       case "win":
         showMessage(`Player ${event.player} wins!`);
@@ -102,11 +107,24 @@ function sendMoves(board, websocket) {
     websocket.send(JSON.stringify(event));
   });
   // Add listener for decisions
-
-
-}
-
-function sendQuestion(board, websocket) {
+  board.querySelector("#sendDecisions").addEventListener("click", () => {
+    // Determine which images are still in the game
+    const imagesLeft = Array.from(board.querySelectorAll(".active"), element => {
+        const img = element.querySelector("img");
+        if (img !== null) {
+            return img["src"];
+        } else {
+            return "";
+        }
+    });
+    const event = {
+        type: "decisions",
+        left: imagesLeft,
+        // removed: imagesRemoved,
+        player: player,
+    }
+    websocket.send(JSON.stringify(event));
+  });
 
 }
 
@@ -123,6 +141,13 @@ function showAnswer(answer) {
  * @param {string} question The other player's question
  */
 function showQuestion(question) {
+    // FIXME
+}
+/**
+ * Update UI with number of images the opponent has left
+ * @param {number} numImages Number of images opponent has left
+ */
+function showOpponentImages(numImages) {
     // FIXME
 }
 
