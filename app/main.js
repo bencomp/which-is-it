@@ -1,4 +1,5 @@
-// import { createBoard, playMove } from "./connect4.js";
+import { showAnswer, showOpponentImages, showQuestion } from "./board.js";
+
 /** Identifier for current player, undefined for watchers */
 let player;
 
@@ -128,28 +129,7 @@ function sendMoves(board, websocket) {
 
 }
 
-/**
- * Update UI with "yes"/"no" answer
- * @param {string} answer The other player's answer
- */
-function showAnswer(answer) {
-    // FIXME
-}
 
-/**
- * Update UI with question to answer
- * @param {string} question The other player's question
- */
-function showQuestion(question) {
-    // FIXME
-}
-/**
- * Update UI with number of images the opponent has left
- * @param {number} numImages Number of images opponent has left
- */
-function showOpponentImages(numImages) {
-    // FIXME
-}
 
 window.addEventListener("DOMContentLoaded", () => {
   // Initialize the UI.
