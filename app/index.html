@@ -27,15 +27,15 @@
             </li-->
           </ul>
         <q id="oppo_answer"></q>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Stel hier je vraag &hellip;" aria-label="Search">
+          <form onsubmit="return false;" class="d-flex" role="search">
+            <input id="questionBox" class="form-control me-2" type="search" placeholder="Stel hier je vraag &hellip;" aria-label="Search">
             <button class="btn btn-outline-secondary" type="button">OK</button>
           </form>
         </div>
       </div>
     </nav>
 <main class="container">
-  <div class="album py-4 d-flex g-4 orakel">
+  <div class="album py-4 d-flex g-4 orakel hide">
     <figure id="this_one" class="card shadow-sm">
       <!--figcaption>Shh! Dit is het plaatje dat je tegenstander moet raden!</figcaption-->
       <!-- <img> -->
@@ -51,7 +51,7 @@
         <p>Je vroeg:<br>
         <q id="my_question"></q></p>
         <p>Het antwoord van de tegenstander:</p>
-        <button class="btn btn-outline-secondary" type="button" id="decisionsReady">Klaar!</button>
+
     </div>
   </div>
   <div class="album py-5 bg-light">
@@ -60,6 +60,7 @@
       </div>
     </div>
   </div>
+  <button class="btn btn-outline-secondary" type="button" id="decisionsReady">Klaar!</button>
 </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="game.js"></script>

@@ -1,3 +1,4 @@
+const server = "ws://192.168.43.181:8001"
 const api = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/collectie/services/collectie/sparql'
 /** This user's role in the game */
 let player
@@ -7,7 +8,7 @@ let player
  * - player1asks
    - player1
  */
-let turn = "player1"
+let state = "player1asks"
 
 const postOptions = {
   method: 'POST',
@@ -105,12 +106,16 @@ window.onload = function() {
     //
 }
 
+function showMessage(message) {
+  window.setTimeout(() => window.alert(message), 50);
+}
+
 var annotationText = "";
 var websocket;
 var answer = "";
 
 window.addEventListener("DOMContentLoaded", () => {
-  websocket = new WebSocket("ws://172.16.32.159:8001/");
+  websocket = new WebSocket(server);
   initGame(websocket);
 
   document.querySelectorAll(".btn-outline-secondary")[0].addEventListener("click", () => {
@@ -129,6 +134,7 @@ window.addEventListener("DOMContentLoaded", () => {
         answer: "ja",
         player: player,
     }
+    document.querySelector('.orakel').classList.add('hide')
     websocket.send(JSON.stringify(event))
   })
   document.querySelector("#noAnswer").addEventListener("click", () => {
@@ -137,6 +143,7 @@ window.addEventListener("DOMContentLoaded", () => {
         answer: "nee",
         player: player,
     }
+    document.querySelector('.orakel').classList.add('hide')
     websocket.send(JSON.stringify(event))
   })
   document.querySelector("#decisionsReady").addEventListener("click", () => {
@@ -144,15 +151,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // Annotate these with negative of received answer
     // Find images that are still in the game
     // Annotate them with received answer
-    const imagesLeft = findActiveImages()
-    const urisLeft = Array.from(imagesLeft)//, img => {})
+    // const imagesLeft = findActiveImages()
+    // const urisLeft = Array.from(imagesLeft)//, img => {})
     const event = {
         type: "decisions",
-        left: urisLeft,
+        left: [],
         player: player,
     }
-    websocket.send(JSON.stringify(event))
     // Clear question and answer
+    document.querySelector('#questionBox').classList.remove('ja', 'nee')
+    document.querySelector('#questionBox').value = ""
+
+    websocket.send(JSON.stringify(event))
 
   })
 
@@ -215,7 +225,8 @@ function initGame(websocket) {
       case "decisions":
         // Show the other player's answer
         if (event.player !== player) {
-            showOpponentImages(event.left.length);
+            showOpponentImages();
+
         }
         break;
       case "win":
@@ -241,11 +252,11 @@ function initGame(websocket) {
 function showAnswer(inAnswer) {
     // FIXME
     answer = inAnswer
-    const questionElem = document.querySelector('.form-control.me-2')
-    if (answer === "yes") {
-        questionElem.classList.add('correct')
-    } else if (answer === "no") {
-        questionElem.classList.add('incorrect')
+    const questionElem = document.querySelector('#questionBox')
+    if (answer === "ja") {
+        questionElem.classList.add('ja')
+    } else if (answer === "nee") {
+        questionElem.classList.add('nee')
     }
     document.querySelector('#oppo_answer').textContent = inAnswer
 }
@@ -255,6 +266,7 @@ function showAnswer(inAnswer) {
  * @param {string} question The other player's question
  */
 function showQuestion(question) {
+  document.querySelector('.orakel').classList.remove('hide')
   document.querySelector('#oppo_question').textContent = question
 }
 /**
