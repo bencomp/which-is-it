@@ -16,16 +16,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
+            <!--li class="nav-item">
               <a class="nav-link" aria-current="page" href="">Nieuw</a>
-            </li>
-            <li class="nav-item">
+            </li-->
+            <!--li class="nav-item">
               <a class="nav-link " aria-current="page" href="?join=player2" onclick="player1(); return false;">Neem deel</a>
-            </li>
-            <li class="nav-item">
+            </li-->
+            <!--li class="nav-item">
               <a class="nav-link " aria-current="page" href="?watch=watch">Kijk mee</a>
-            </li>
+            </li-->
           </ul>
+        <q id="oppo_answer"></q>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Stel hier je vraag &hellip;" aria-label="Search">
             <button class="btn btn-outline-secondary" type="button">OK</button>
@@ -35,14 +36,14 @@
     </nav>
 <main class="container">
   <div class="album py-4 d-flex g-4 orakel">
-    <figure id="this_one">
-      <figcaption>Shh! Dit is het plaatje dat je tegenstander moet raden!</figcaption>
+    <figure id="this_one" class="card shadow-sm"">
+      <!--figcaption>Shh! Dit is het plaatje dat je tegenstander moet raden!</figcaption-->
       <!-- <img> -->
     </figure>
     <div id="qAndAForYou">
-        <p>Je tegenstander vraagt:<br>
-        <q id="oppo_question"></q></p>
-        <p>Jouw antwoord:</p>
+        <!--p>Je tegenstander vraagt:<br-->
+        <q id="oppo_question">is het een traditionele wadix</q></p>
+        <!--p>Jouw antwoord:</p-->
         <button class="btn btn-outline-secondary" type="button" id="yesAnswer">Ja</button>
         <button class="btn btn-outline-secondary" type="button" id="noAnswer">Nee</button>
     </div>
@@ -50,7 +51,6 @@
         <p>Je vroeg:<br>
         <q id="my_question"></q></p>
         <p>Het antwoord van de tegenstander:</p>
-        <q id="oppo_answer"></q>
         <button class="btn btn-outline-secondary" type="button" id="decisionsReady">Klaar!</button>
     </div>
   </div>

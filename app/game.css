@@ -15,10 +15,40 @@ nav.navbar {
 
 form button {
   background-color:#fff !important;
+  --bs-btn-border-color: none !important;
 }
 
 form button:hover {
   color:  rgb(234, 78, 85) !important;
+}
+
+form input.form-control  {
+  font-size:24px;
+  border: 0px solid #ced4da ;
+
+}
+
+#yesAnswer,
+#noAnswer{
+  margin-left:40px;
+  color:#ffffff;
+  width:80px;
+  padding:9px;
+border: 0px solid #ced4da !important;
+ background-color: rgb(234, 78, 85) !important;. 
+}
+
+#oppo_question {
+  margin-left:40px;
+}
+
+#qAndAFromYou {
+  display:none;
+}
+
+
+#oppo_answer {
+  display:none;
 }
 
 .album {
@@ -34,6 +64,7 @@ article.selected {
 }
 
 .orakel {
+  margin-top:10px
   gap: 1rem;
 }
 
@@ -63,4 +94,29 @@ height:20px;
     /* display: block; */
     top: 0;
     margin: 0 0 0px 50px;
+}
+
+#this_one {
+margin-top:100px;
+transition: margin 5s;
+
+}
+
+.album.hide {
+  margin-top:-480px;
+}
+
+#qAndAForYou {
+  margin-top:100px;
+  font-size:20px;
+}
+
+form input.nee {
+  background-color:#ffc9e0;
+  color:#ff4c4c;
+}
+
+form input.ja {
+  background-color:#bbffc3;
+  color:#0b280a;
 }

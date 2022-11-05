@@ -35,5 +35,5 @@ WHERE {
  
 }
 GROUP BY ?geonames ?vlag ?imgS
-ORDER BY RAND()
+#ORDER BY RAND()
 LIMIT 24
