@@ -1,3 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap";
+
+html, body {
+  font-family:Montserrat !important;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   color: rgb(234, 78, 85) !important;
 }
