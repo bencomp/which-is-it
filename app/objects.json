@@ -1,0 +1,544 @@
+{
+  "head": {
+    "link": [],
+    "vars": [
+      "geonames",
+      "imgS",
+      "vlag",
+      "onderwerp",
+      "lokatie"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-1927-3.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Kamasan"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1625820"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3035/3035227.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Surabaya%20City.png"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Jawa's Noordkust"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Surabaya (stadsgemeente)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-1936-8.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1633791"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3036/3036562.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20East%20Nusa%20Tenggara.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Nusa Tenggara"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Nusa Tenggara Timur (provincie)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1641898"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3024/3024635.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Central%20Kalimantan.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Borneo"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Kalimantan Tengah (provincie)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026878.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1633069"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3036/3036032.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Palembang%20City.png"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Palembang"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Palembang (stadsgemeente)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026879.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1643084"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3037/3037187.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Indonesia.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Javaans"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Indonesië"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1641898"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3034/3034963.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Central%20Kalimantan.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Dayak"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Kalimantan Tengah (provincie)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026877.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026875.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-1927-2.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Kamasan"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1694008"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-3245-3.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Philippines.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Filipijns"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Filipijnen"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1643084"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3037/3037186.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Indonesia.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Javaans"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Indonesië"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026874.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1643084"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3034/3034655.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Indonesia.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Minangkabau"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Indonesië"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3026/3026880.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1641897"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-1870-4.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20East%20Kalimantan.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Kenyah en Kayan"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Kalimantan Timur (provincie)"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1562822"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j2006/2006750.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Vietnam.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Vietnamees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Vietnam"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/2328926"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j6018/6018207.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Nigeria.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Hausa"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Nigeria"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3031/3031986.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1650535"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//scannr/j3068/3068529.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bali.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Balinees"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Bali"
+        }
+      },
+      {
+        "geonames": {
+          "type": "uri",
+          "value": "https://www.geonames.org/1641897"
+        },
+        "imgS": {
+          "type": "literal",
+          "value": "https://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/TM//tm-1870-5.jpg&cache=yes?height=100"
+        },
+        "vlag": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20East%20Kalimantan.svg"
+        },
+        "onderwerp": {
+          "type": "literal",
+          "value": "Kenyah en Kayan"
+        },
+        "lokatie": {
+          "type": "literal",
+          "value": "Kalimantan Timur (provincie)"
+        }
+      }
+    ]
+  }
+}
