@@ -21,7 +21,7 @@ window.onload = function() {
           console.log(ld)
           const html = []
           ld.results.bindings.forEach(obj => {
-            console.log("test")
+            // console.log("test")
             const img = new Image()
             const vlagImg = new Image();
             vlagImg.src = obj.vlag.value
@@ -43,10 +43,6 @@ window.onload = function() {
 `)
           })
           document.getElementById('objects').innerHTML = html.join('')
-          const theImg = document.createElement('img', {id: 'the_image'})
-          const theNumber = Math.floor(Math.random() * html.length)
-          theImg.src = ld.results.bindings[theNumber].img.value
-          document.getElementById('this_one').appendChild(theImg)
           document.querySelectorAll('article').forEach(obj => {
             obj.onclick = (ev) => {
               obj.classList.toggle('selected')
@@ -73,6 +69,14 @@ window.onload = function() {
                return false
             }
           })
+        })
+        .then(() => {
+          const cards = Array.from(document.querySelectorAll('.card'))
+          const theImg = document.createElement('img', {id: 'the_image'})
+          const theNumber = Math.floor(Math.random() * cards.length)
+          console.log(theNumber)
+          theImg.src = cards[theNumber].querySelector('img')['src']
+          document.getElementById('this_one').appendChild(theImg)
         })
         .catch(e => {
             console.error(e)
@@ -138,6 +142,7 @@ function initGame(websocket) {
         // Create links for inviting the second player and spectators.
         // document.querySelector(".join").href = "?join=" + event.join;
         // document.querySelector(".watch").href = "?watch=" + event.watch;
+        // FIXME: get the board parameters from player1
         break;
       case "question":
         // Update the UI with the move.
