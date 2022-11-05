@@ -39,12 +39,19 @@
       <figcaption>Shh! Dit is het plaatje dat je tegenstander moet raden!</figcaption>
       <!-- <img> -->
     </figure>
-    <div>
+    <div id="qAndAForYou">
         <p>Je tegenstander vraagt:<br>
         <q id="oppo_question"></q></p>
         <p>Jouw antwoord:</p>
-        <button class="btn btn-outline-secondary" type="button">Ja</button>
-        <button class="btn btn-outline-secondary" type="button">Nee</button>
+        <button class="btn btn-outline-secondary" type="button" id="yesAnswer">Ja</button>
+        <button class="btn btn-outline-secondary" type="button" id="noAnswer">Nee</button>
+    </div>
+    <div id="qAndAFromYou">
+        <p>Je vroeg:<br>
+        <q id="my_question"></q></p>
+        <p>Het antwoord van de tegenstander:</p>
+        <q id="oppo_answer"></q>
+        <button class="btn btn-outline-secondary" type="button" id="decisionsReady">Klaar!</button>
     </div>
   </div>
   <div class="album py-5 bg-light">

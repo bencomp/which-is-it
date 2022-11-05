@@ -1,4 +1,5 @@
 const api = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/collectie/services/collectie/sparql'
+/** This user's role in the game */
 let player
 const postOptions = {
   method: 'POST',
@@ -95,16 +96,39 @@ window.onload = function() {
     // }, 1000)
     //
 }
+
 var annotationText = "";
 var websocket;
 var answer = "";
+
 window.addEventListener("DOMContentLoaded", () => {
   websocket = new WebSocket("ws://172.16.32.159:8001/");
   initGame(websocket);
 
   document.querySelectorAll(".btn-outline-secondary")[0].addEventListener("click", () => {
-      annotationText = document.querySelectorAll(".form-control")[0].value;
-     websocket.send(annotationText);
+    annotationText = document.querySelectorAll(".form-control")[0].value;
+    const event = {
+        type: "question",
+        question: annotationText,
+        player: player,
+    }
+    websocket.send(JSON.stringify(event))
+  })
+  document.querySelector("#yesAnswer").addEventListener("click", () => {
+    const event = {
+        type: "answer",
+        answer: "ja",
+        player: player,
+    }
+    websocket.send(JSON.stringify(event))
+  })
+  document.querySelector("#noAnswer").addEventListener("click", () => {
+    const event = {
+        type: "answer",
+        answer: "nee",
+        player: player,
+    }
+    websocket.send(JSON.stringify(event))
   })
 
 })
@@ -182,8 +206,9 @@ function initGame(websocket) {
  * Update UI with "yes"/"no" answer
  * @param {string} answer The other player's answer
  */
-function showAnswer(answer) {
+function showAnswer(inAnswer) {
     // FIXME
+    answer = inAnswer
 }
 
 /**
